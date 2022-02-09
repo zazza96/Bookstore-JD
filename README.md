@@ -21,3 +21,7 @@ The breakpoints used where:
 - small tablet: from 768px to 960px
 - tablet (larger) - from 960px to 1180px
 - desktop - 1180px and above
+
+# Changes
+On tablet, changed the stacking of the all books element to make content fit better the view port without compromising image quality or text.
+On smaller tablet, I'm following the mobile design
