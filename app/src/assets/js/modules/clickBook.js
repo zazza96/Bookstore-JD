@@ -1,4 +1,6 @@
 export default () => {
+
+    //wait for .book-items to exist
     waitUntilTrue(function() {
         return document.querySelectorAll('.book-item').length > 0;
     }, init, { timeout: 5000 });
@@ -34,6 +36,7 @@ export default () => {
     }
 }
 
+//set up poller to wait for elements
 function waitUntilTrue(fn, cb, time) {
     var timeUp = false;
 

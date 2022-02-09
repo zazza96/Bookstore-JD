@@ -51,6 +51,8 @@ export default () => {
 
 
             }
+
+            //loop through last two
             for (const featured of lastTwo) {
                 const title = featured.volumeInfo.title;
                 const subtitle = '';
