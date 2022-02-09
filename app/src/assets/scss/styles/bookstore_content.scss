@@ -23,7 +23,10 @@
         margin-bottom: 0;
     }
     p {
-        padding: 5px 0;
+        margin-bottom: 10px;
+    }
+    .book-item__title {
+        margin-bottom: 20px;
     }
     @media (min-width: 960px) {
         min-height: 285px;
@@ -94,7 +97,7 @@
             @media (min-width: 960px) {
                 width: 100%;
                 text-align: center;
-                margin-right: 20px;
+                margin-right: 0px;
             }
         }
         .book-item__info {
