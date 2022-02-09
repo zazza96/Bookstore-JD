@@ -1,11 +1,15 @@
+// Font Awesome
+import '@fortawesome/fontawesome-free';
+
 // Styles
 import '../scss/main.scss';
 
 // NPM package
 import 'lazysizes';
 
-// Own modules
-import helloWorld from './modules/HelloWorld';
 
-// Implement the HelloWorld class
-new helloWorld();
+
+// Own modules
+import getBooks from './modules/getBooks';
+
+getBooks();
