@@ -12,13 +12,16 @@ export default () => {
         // Begin accessing JSON data here
         var data = JSON.parse(this.response)
 
-        //loop though books
+        //check request status is successful and the api exists
         if (request.status >= 200 && request.status < 400) {
             const bookItems = data.items;
 
-            console.log(bookItems[0].volumeInfo.title)
+            //featured books
+            const lastTwo = bookItems.splice(-2); // get last two elements
+            const allButLastTwo = bookItems.slice(0, bookItems.length - 0); //get all elements but the last two
 
-            for (const bookItem of bookItems) {
+            //All Books
+            for (const bookItem of allButLastTwo) {
                 const title = bookItem.volumeInfo.title;
                 const subtitle = '';
                 const cover = bookItem.volumeInfo.imageLinks.smallThumbnail;
@@ -30,17 +33,49 @@ export default () => {
                     subtitle = bookItem.volumeInfo.subtitle;
                 }
 
+                console.log(subtitle)
+
 
                 const component = itemHTML(title, subtitle, cover, authors, count, description);
 
 
                 waitUntilTrue(function() {
-                    return document.querySelectorAll('#main_content').length > 0;
+                    return document.querySelectorAll('#all-books__content').length > 0;
                 }, init, { timeout: 5000 });
 
                 function init() {
                     // code here
-                    document.querySelector('#main_content').insertAdjacentHTML('beforeend', component);
+                    document.querySelector('#all-books__content').insertAdjacentHTML('beforeend', component);
+                }
+
+
+
+            }
+            for (const featured of lastTwo) {
+                const title = featured.volumeInfo.title;
+                const subtitle = '';
+                const cover = featured.volumeInfo.imageLinks.smallThumbnail;
+                const authors = featured.volumeInfo.authors;
+                const count = featured.volumeInfo.pageCount;
+                const description = stringCut(featured.volumeInfo.description);
+
+                if (featured.volumeInfo.subtitle) {
+                    subtitle = featured.volumeInfo.subtitle;
+                }
+
+                console.log(subtitle)
+
+
+                const component = itemHTML(title, subtitle, cover, authors, count, description);
+
+
+                waitUntilTrue(function() {
+                    return document.querySelectorAll('#featured__content').length > 0;
+                }, init, { timeout: 5000 });
+
+                function init() {
+                    // code here
+                    document.querySelector('#featured__content').insertAdjacentHTML('beforeend', component);
                 }
 
 
@@ -57,13 +92,16 @@ export default () => {
 }
 
 function itemHTML(title, subtitle, cover, authors, pageCount, description) {
+    //creating HTML to display book info
     return `
     <div class="book-item">
-      <img class="book-item__img" src="${cover}">
-      <h3 class="book-item__title">${title}<span class="book-item__subtitle">${subtitle}</span></h3>
-      <p class="book-item__author">${authors}</p>
-      <p class="book-item__pages">Pages: ${pageCount}</p>
-      <p class="book-item__description">${description}</p>
+      <div class="book-item-image__containter"><img class="book-item__img" src="${cover}"></div>
+      <div class="book-item__info">
+        <h3 class="book-item__title">${title}<span class="book-item__subtitle"> ${subtitle}</span></h3>
+        <p class="book-item__author">${authors}</p>
+        <p class="book-item__pages">Pages: ${pageCount}</p>
+        <p class="book-item__description">${description}...</p>
+      </div>
   </div>
   `
 }

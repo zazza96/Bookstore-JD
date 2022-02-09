@@ -1,7 +1,8 @@
 // NPM package
 @import "~normalize.css";
-
-body {
-  background: chocolate;
-  display: flex;
-}
+@import "./styles/breakpoints.scss";
+@import "./styles/global.scss";
+@import "./styles/bookstore_content.scss";
+@import "./styles/nav.scss";
+@import "./styles/header.scss";
+@import "./styles/socials.scss";

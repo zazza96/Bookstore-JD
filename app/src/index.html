@@ -9,48 +9,60 @@
 </head>
 
 <body>
-    <header>
-        <div class="desktop-heading_container">
-            <div class="bookstore_title-containter">
-                <div class="logo"></div>
-                <div class="title-heading">
-                    <h1>The Bookstore</h1>
-                </div>
+    <div id="body__content">
+        <header>
+            <div class="desktop-heading__container">
+                <div class="bookstore-title__containter">
+                    <div class="logo"><i class="fas fa-book"></i></div>
+                    <div class="title-heading__container">
+                        <h1>The Bookstore</h1>
+                    </div>
 
-            </div>
-            <div class="header_inner-container">
-                <div class="socials_container">
+                </div>
+                <div class="socials__container">
                     <i class="fa fa-twitter"></i>
                     <i class="fa fa-facebook-square"></i>
                     <i class="fa fa-instagram"></i>
                 </div>
             </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a>Home</a></li>
-                <li><a>Books</a></li>
-                <li><a>Magazines</a></li>
-                <li><a>E-Books</a></li>
-                <li><a>Account</a></li>
-            </ul>
+            <!-- Hamburger icon -->
+            <input class="side-menu" type="checkbox" id="side-menu" />
+            <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+            <nav>
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>Books</a></li>
+                    <li><a>Magazines</a></li>
+                    <li><a>E-Books</a></li>
+                    <li><a>Account</a></li>
+                </ul>
 
-        </nav>
-        <div class="description-text">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales commodo massa, nec imperdiet turpis tempus quis. Quisque vel ipsum gravida, convallis orci vitae, vestibulum metus. Pellentesque interdum convallis metus vel mattis. Integer quis
-                mollis massa. Aliquam non urna enim. Nunc ac ornare enim. Integer a elementum lorem, ac sodales felis. Suspendisse potenti. Curabitur sollicitudin turpis et odio lobortis interdum. Nam condimentum vitae ipsum at ultricies. Donec a viverra
-                libero. Maecenas magna turpis, egestas sed libero nec, efficitur tristique nibh. Fusce eu ullamcorper libero, in molestie est. Nunc luctus nisl sed urna elementum tristique. Vestibulum nibh erat, bibendum eget aliquam eleifend, congue
-                quis massa.
-            </p>
-        </div>
-    </header>
+            </nav>
+            <div class="description__losetext">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales commodo massa, nec imperdiet turpis tempus quis. Quisque vel ipsum gravida, convallis orci vitae, vestibulum metus. Pellentesque interdum convallis metus vel mattis. Integer quis
+                    mollis massa.
+                </p>
+            </div>
+        </header>
 
-    <main>
-        <div id="main_content">
+        <main>
+            <div id="main__content">
+                <div id="featured__content">
+                    <h2>Featured</h2>
+                </div>
+                <div id="all-books__content"></div>
+            </div>
+        </main>
+    </div>
 
+    <footer>
+        <div class="socials__container">
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-instagram"></i>
         </div>
-    </main>
+    </footer>
 
 
 

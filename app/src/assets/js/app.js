@@ -5,11 +5,13 @@ import '@fortawesome/fontawesome-free';
 import '../scss/main.scss';
 
 // NPM package
-import 'lazysizes';
+// import 'lazysizes';
 
 
 
 // Own modules
 import getBooks from './modules/getBooks';
+import clickBook from './modules/clickBook';
 
 getBooks();
+clickBook();
